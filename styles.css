@@ -5,10 +5,10 @@
 }
 
 body {
-    padding: 20vh;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 h1 {
@@ -17,23 +17,19 @@ h1 {
 
 #container {
     border: blue 1px solid;
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .gridRow {
     display: flex;
     flex-direction: row;
-    gap: 5px;
-    border: red 2px solid;
 }
 
 .gridSquare {
-    padding: 10px;
-    gap: 5px;
-    background-color: blanchedalmond;
-    border: 2px solid black;
+    padding: 15px;
+    background-color: rgb(242, 252, 253);
+    border: 1.5px solid black;
 }
