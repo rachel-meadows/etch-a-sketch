@@ -2,10 +2,10 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
-    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -13,23 +13,117 @@ body {
 
 h1 {
     text-align: center;
+    padding: 10px 0px;
+    margin-bottom: 15px;
+    background-image: linear-gradient(rgb(0, 204, 255), rgba(0, 204, 255, 0.5));
+}
+
+#pageContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+#sidebar {
+    min-width: 20vw;
+    border: 2px rgb(0, 204, 255) solid;
+    background-color: rgba(0, 204, 255, 0.5);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+hr {
+    border: none;
+    border-top: 4px rgb(0, 204, 255) double;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 #container {
-    border: blue 1px solid;
+    border: rgb(0, 204, 255) 1px solid;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
+    height: 80vh;
+    width: 80vh;
 }
 
 .gridRow {
     display: flex;
     flex-direction: row;
+    flex-grow: 1;
+    width: 100%;
 }
 
 .gridSquare {
-    padding: 15px;
+    display: flex;
     background-color: rgb(242, 252, 253);
-    border: 1.5px solid black;
+    border: 1px solid black;
+    flex-grow: 1;
 }
+
+#clearGrid {
+    padding: 5px 15px;
+    background-color: rgba(0, 180, 0, 0.678);
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    font-size: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 1px black;
+}
+
+.activeCell {
+    background-color: rgba(255, 0, 0, 0.9);
+}
+
+.slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    height: 15px;
+    border-radius: 5px; 
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px;
+    border-radius: 50%; 
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }

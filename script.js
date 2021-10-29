@@ -1,6 +1,8 @@
-function makeGrid (width, height) {
-    const container = document.querySelector('#container');
+// Constants
+const container = document.querySelector('#container');
+let gridSize = 16;
 
+function makeGrid (width, height) {
     for (i = 0; i < height; i++){
         let row = document.createElement('div'); // Make new element div
         container.appendChild(row);
@@ -11,17 +13,17 @@ function makeGrid (width, height) {
             cell.classList.add('gridSquare');
         }
     }
+    var gridRows = document.querySelectorAll(".gridSquare");
     var gridSquares = document.querySelectorAll(".gridSquare");
-    return gridSquares;
+    return [gridRows, gridSquares];
 }
 
 function applyHoverPen(gridSquares) {
     gridSquares.forEach((gridSquare) => {
         // This handler will be executed every time the cursor is moved over a different list item
         gridSquare.addEventListener("mouseover", function( e ) {
-            console.log(gridSquare);
             // Highlight the mouseover grid square
-            e.target.style.background = `rgba(255, 0, 0, ${0.9})`;
+            e.target.classList.add('activeCell');
         });
 
         /* Playing with removing styles:
@@ -35,6 +37,39 @@ function applyHoverPen(gridSquares) {
     });
 }
 
+function clearGrid(gridSquares) {
+    const clearGrid = document.querySelector('#clearGrid');
+    clearGrid.addEventListener("click", function( e ) {
+        gridSquares.forEach((gridSquare) => {
+            gridSquare.classList.remove('activeCell');
+        });
+    });
+}
 
-gridSquares = makeGrid(16, 16); // Width, height. Default should be 16.
-applyHoverPen(gridSquares);
+
+function resizeGrid() {
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value; // Display default slider value
+    
+    slider.oninput = function() {
+        gridSize = this.value;
+        output.innerHTML = this.value; // Display new slider value
+        // Get rid of the old grid
+        container.querySelectorAll('*').forEach(n => n.remove());
+        // Make the new grid
+        enterActiveState(gridSize);
+    }
+}
+
+function enterActiveState (gridSize=16) {
+    gridArray = makeGrid(gridSize, gridSize); // Width, height - so needn't be square if wanted later
+    let gridRows = gridArray[0];
+    let gridSquares = gridArray[1];
+    applyHoverPen(gridSquares);
+    clearGrid(gridSquares);
+    resizeGrid();
+}
+
+// Calling the functions!
+enterActiveState();

@@ -11,7 +11,18 @@
 
 <body>
     <h1>Etch-A-Sketch!</h1>
-    <div id="container"> <!-- Grid -->
+    <div id="pageContainer">
+        <div id="sidebar">
+            <h2>Options:</h2>
+            <hr>
+            <button id="clearGrid">Clear grid</button>
+            <p>Grid size: <span id="demo"></span></p>
+            <div class="slidecontainer">
+                <input type="range" min="10" max="40" value="16" class="slider" id="myRange">
+              </div>
+        </div>
+        <div id="container"> <!-- Grid -->
+        </div>
     </div>
 
 <script src="script.js"></script>
