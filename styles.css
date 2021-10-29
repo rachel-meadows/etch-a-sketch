@@ -1,0 +1,39 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+h1 {
+    text-align: center;
+}
+
+#container {
+    border: blue 1px solid;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gridRow {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    border: red 2px solid;
+}
+
+.gridSquare {
+    padding: 10px;
+    gap: 5px;
+    background-color: blanchedalmond;
+    border: 2px solid black;
+}
