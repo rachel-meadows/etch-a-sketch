@@ -1,6 +1,7 @@
 // Constants
 const container = document.querySelector('#container');
 let gridSize = 16;
+let colourChoice = "black";
 
 function makeGrid (width, height) {
     for (i = 0; i < height; i++){
@@ -25,15 +26,6 @@ function applyHoverPen(gridSquares) {
             // Highlight the mouseover grid square
             e.target.classList.add('activeCell');
         });
-
-        /* Playing with removing styles:
-        gridSquare.addEventListener("mouseleave", e => {
-            // Reset the colour after a short delay
-            setTimeout(function() {
-                e.target.style.background = "";
-            }, 500);
-        });
-        */
     });
 }
 
@@ -45,7 +37,6 @@ function clearGrid(gridSquares) {
         });
     });
 }
-
 
 function resizeGrid() {
     var slider = document.getElementById("myRange");
