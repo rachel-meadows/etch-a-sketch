@@ -1,7 +1,10 @@
 // Constants
 const container = document.querySelector('#container');
+const colorChoiceOption = document.getElementsByName('color');
 let gridSize = 16;
-let colourChoice = "black";
+let opacityChoice = 1;
+let colorChoice = "1, 1, 1, ";
+let colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
 
 function makeGrid (width, height) {
     for (i = 0; i < height; i++){
@@ -24,7 +27,24 @@ function applyHoverPen(gridSquares) {
         // This handler will be executed every time the cursor is moved over a different list item
         gridSquare.addEventListener("mouseover", function( e ) {
             // Highlight the mouseover grid square
-            e.target.classList.add('activeCell');
+            e.target.style.backgroundColor = colorOpacityChoice;
+        });
+    });
+}
+
+function changeColor() {
+    colorChoiceOption.forEach((option) => {
+        // This handler will be executed every time the user clicks a different radio button
+        option.addEventListener("click", function( e ) {
+            if (option.id == "fade") {
+                opacityChoice = 0.5;
+            } else {
+                opacityChoice = 1;
+                colorChoice = option.value;
+                console.log(option.value)
+                console.log(colorOpacityChoice);
+            }
+            colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
         });
     });
 }
@@ -39,8 +59,8 @@ function clearGrid(gridSquares) {
 }
 
 function resizeGrid() {
-    var slider = document.getElementById("myRange");
-    var output = document.getElementById("demo");
+    let slider = document.getElementById("myRange");
+    let output = document.getElementById("demo");
     output.innerHTML = slider.value; // Display default slider value
     
     slider.oninput = function() {
@@ -60,6 +80,7 @@ function enterActiveState (gridSize=16) {
     applyHoverPen(gridSquares);
     clearGrid(gridSquares);
     resizeGrid();
+    changeColor();
 }
 
 // Calling the functions!

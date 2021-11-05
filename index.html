@@ -19,7 +19,22 @@
             <p>Grid size: <span id="demo"></span></p>
             <div class="slidecontainer">
                 <input type="range" min="10" max="40" value="16" class="slider" id="myRange">
-              </div>
+            </div>
+            <form id="colorBlock">
+                <p>Pen color:</p>
+                <div>
+                    <input type="radio" name="color" value="1, 1, 1, " id="black" checked=true> 
+                    <label for="black">Black</label>
+                </div>
+                <div>
+                    <input type="radio" name="color" value="1, 0, 0, " id="red"> 
+                    <label for="red">Red</label>
+                </div>
+                <div>
+                    <input type="radio" name="color" value="Fade" id="fade"> 
+                    <label for="fade">Fade</label>
+                </div>
+            </form>
         </div>
         <div id="container"> <!-- Grid -->
         </div>
