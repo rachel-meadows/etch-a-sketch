@@ -8,15 +8,17 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: stretch;
+    gap: 5px;
 }
 
 h1 {
+    margin-bottom: 20px;
     text-align: center;
     padding: 10px 0px;
-    margin-bottom: 20px;
     background-image: linear-gradient(rgb(0, 204, 255), rgba(0, 204, 255, 0.5));
-    color: rgb(0, 0, 37);
+    color: white;
+    text-shadow: 1px 2px 2px black;
 }
 
 h2 {
@@ -27,30 +29,32 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 #sidebar {
     min-width: 20vw;
-    border: 2px rgb(0, 204, 255) solid;
+    border: 1px rgb(0, 204, 255) solid;
+    box-shadow: 0px 0px 1px rgb(0, 204, 255);
     background-color: rgba(0, 204, 255, 0.5);
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     border-radius: 5px;
 }
 
 hr {
     border: none;
-    border-top: 4px rgb(0, 204, 255) double;
-    width: 100%;
+    border-top: 4px rgb(223, 241, 252) double;
+    width: 90%;
     margin-bottom: 15px;
 }
 
 #container {
     border: rgb(0, 204, 255) 1px solid;
+    box-shadow: 0px 0px 1px rgb(0, 204, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,42 +77,41 @@ hr {
 }
 
 #clearGrid {
-    padding: 5px 15px;
-    background-color: rgba(0, 180, 0, 0.678);
+    padding: 5px 30px;
+    background-color: rgba(0, 97, 223, 0.9);
     border: none;
     border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.9px;
 }
 
 button {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 button:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 1px 1px black;
-}
-
-.activeCell {
-    background-color: red;
+    box-shadow: 0px 0px 1px 1px rgba(0, 97, 223, 1);
 }
 
 .slidecontainer {
     width: 100%;
   }
   
-  .slider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 25px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-    height: 15px;
-    border-radius: 5px; 
-  }
+.slider {
+-webkit-appearance: none;
+appearance: none;
+width: 100%;
+height: 25px;
+background: #d3d3d3;
+outline: none;
+opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
+-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+transition: opacity .2s;
+height: 15px;
+border-radius: 5px; 
+}
   
   .slider:hover {
     opacity: 1;
@@ -120,7 +123,7 @@ button:hover {
     width: 25px;
     height: 25px;
     border-radius: 50%; 
-    background: rgba(0, 180, 0, 0.9);
+    background: rgba(0, 97, 223, 1);
     cursor: pointer;
   }
   
@@ -128,7 +131,7 @@ button:hover {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: rgba(0, 180, 0, 0.9);
+    background: rgba(0, 97, 223, 1);
     cursor: pointer;
   }
 
@@ -136,3 +139,36 @@ button:hover {
       display: flex;
       flex-direction: column;
   }
+
+.optionLabel {
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+form {
+    font-size: 18px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+input[type=radio] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+    margin-right: 5px;
+}
+
+input[type="radio"] + label {
+    color: rgb(37, 37, 37);
+}
+
+input[type="radio"]:checked + label {
+    color: black;
+}
+
+#gridSize {
+    font-size: 15px;
+    margin-bottom: 10px;
+}

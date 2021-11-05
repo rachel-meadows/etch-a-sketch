@@ -15,13 +15,14 @@
         <div id="sidebar">
             <h2>Options:</h2>
             <hr>
-            <button id="clearGrid">Clear grid</button>
-            <p>Grid size: <span id="demo"></span></p>
+            <button id="clearGrid">Clear</button>
+            <p class="optionLabel">Grid size:</p>
+            <span id="gridSize"></span>
             <div class="slidecontainer">
-                <input type="range" min="10" max="40" value="16" class="slider" id="myRange">
+                <input type="range" min="5" max="30" value="16" class="slider" id="myRange">
             </div>
             <form id="colorBlock">
-                <p>Pen color:</p>
+                <p class="optionLabel">Pen color:</p>
                 <div>
                     <input type="radio" name="color" value="1, 1, 1, " id="black" checked=true> 
                     <label for="black">Black</label>
@@ -30,8 +31,15 @@
                     <input type="radio" name="color" value="255, 0, 0, " id="red"> 
                     <label for="red">Red</label>
                 </div>
+            </form>
+            <form id="opacityBlock">
+                <p class="optionLabel">Opacity:</p>
                 <div>
-                    <input type="radio" name="color" value="Fade" id="fade"> 
+                    <input type="radio" name="opacity" value="Solid" id="solid" checked=true> 
+                    <label for="solid">Solid</label>
+                </div>
+                <div>
+                    <input type="radio" name="opacity" value="Fade" id="fade"> 
                     <label for="fade">Fade</label>
                 </div>
             </form>

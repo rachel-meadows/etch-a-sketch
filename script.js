@@ -1,6 +1,7 @@
 // Constants
 const container = document.querySelector('#container');
 const colorChoiceOption = document.getElementsByName('color');
+const opacityChoiceOption = document.getElementsByName('opacity');
 let gridSize = 16;
 let opacityChoice = 1;
 let colorChoice = "1, 1, 1, ";
@@ -24,10 +25,13 @@ function makeGrid (width, height) {
 
 function applyHoverPen(gridSquares) {
     gridSquares.forEach((gridSquare) => {
+        let cellCount = 0;
         // This handler will be executed every time the cursor is moved over a different list item
         gridSquare.addEventListener("mouseover", function( e ) {
             // Highlight the mouseover grid square
+            cellCount += 0.1;
             e.target.style.backgroundColor = colorOpacityChoice;
+            colorOpacityChoice = `rgba(${colorChoice + (opacityChoice + cellCount)})`;
         });
     });
 }
@@ -36,32 +40,38 @@ function changeColor() {
     colorChoiceOption.forEach((option) => {
         // This handler will be executed every time the user clicks a different radio button
         option.addEventListener("click", function( e ) {
+            opacityChoice = 1;
+            colorChoice = option.value;
+            colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
+        });        
+    });
+
+    opacityChoiceOption.forEach((option) => {
+        // This handler will be executed every time the user clicks a different radio button
+        option.addEventListener("click", function( e ) {
             if (option.id == "fade") {
-                opacityChoice = 0.5;
+                opacityChoice = 0.1;
             } else {
                 opacityChoice = 1;
-                colorChoice = option.value;
-                console.log(option.value)
-                
             }
             colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
-            console.log(colorOpacityChoice);
-        });
+        });        
     });
 }
 
 function clearGrid(gridSquares) {
     const clearGrid = document.querySelector('#clearGrid');
     clearGrid.addEventListener("click", function( e ) {
+        colorOpacityChoice = `rgba(242, 252, 253, 1)`;
         gridSquares.forEach((gridSquare) => {
-            gridSquare.classList.remove('activeCell');
+            gridSquare.style.backgroundColor = colorOpacityChoice;
         });
     });
 }
 
 function resizeGrid() {
     let slider = document.getElementById("myRange");
-    let output = document.getElementById("demo");
+    let output = document.getElementById("gridSize");
     output.innerHTML = slider.value; // Display default slider value
     
     slider.oninput = function() {
