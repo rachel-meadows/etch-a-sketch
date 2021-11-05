@@ -42,9 +42,10 @@ function changeColor() {
                 opacityChoice = 1;
                 colorChoice = option.value;
                 console.log(option.value)
-                console.log(colorOpacityChoice);
+                
             }
             colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
+            console.log(colorOpacityChoice);
         });
     });
 }
