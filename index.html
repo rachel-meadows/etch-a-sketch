@@ -28,8 +28,14 @@
                     <label for="black">Black</label>
                 </div>
                 <div>
-                    <input type="radio" name="color" value="255, 0, 0, " id="red"> 
+                    <input type="radio" name="color" value="255, 1, 1, " id="red" checked=false> 
                     <label for="red">Red</label>
+                </div>
+                <div id="colorPickerContainer">
+                    <input type="radio" name="color" value="66, 0, 221, " id="custom" checked=false> 
+                    <label for="custom">Custom:</label>
+                    <input type="color" id="colorPicker" name="color"
+                    value="#4200dd">
                 </div>
             </form>
             <form id="opacityBlock">

@@ -172,3 +172,13 @@ input[type="radio"]:checked + label {
     font-size: 15px;
     margin-bottom: 10px;
 }
+
+#colorPickerContainer {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+#colorPicker {
+    max-width: 35px;
+}

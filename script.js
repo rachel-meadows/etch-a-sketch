@@ -7,6 +7,8 @@ let opacityChoice = 1;
 let colorChoice = "1, 1, 1, ";
 let colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
 
+console.log("Is it checked?" + document.getElementById("black").checked);
+
 function makeGrid (width, height) {
     for (i = 0; i < height; i++){
         let row = document.createElement('div'); // Make new element div
@@ -37,12 +39,34 @@ function applyHoverPen(gridSquares) {
 }
 
 function changeColor() {
-    colorChoiceOption.forEach((option) => {
-        // This handler will be executed every time the user clicks a different radio button
-        option.addEventListener("click", function( e ) {
 
-            colorChoice = option.value;
+    // User inputs custom colour
+    let customColor = document.getElementById("colorPicker");
+    customColor.addEventListener("input",(event)=>{
+            // Credit for the below function to https://stackoverflow.com/questions/21646738/convert-hex-to-rgba
+            function hexToRGB(hex) {
+                var r = parseInt(hex.slice(1, 3), 16),
+                    g = parseInt(hex.slice(3, 5), 16),
+                    b = parseInt(hex.slice(5, 7), 16);
+                return `${r}, ${g}, ${b}, `;
+            }
+            
+            // Hex to RGB
+            colorChoice = hexToRGB(customColor.value);
+            console.log("colorChoice: " + colorChoice);
+            
             colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
+            console.log("colorOpacityChoice: " + colorOpacityChoice);
+     });
+
+    colorChoiceOption.forEach((option) => {
+        // This handler will be executed every time the user clicks a different radio button (other than a custom color)
+        option.addEventListener("click", function( e ) {
+            colorChoice = option.value;
+            console.log("colorChoice: " + colorChoice);
+            
+            colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
+            console.log("colorOpacityChoice: " + colorOpacityChoice);
         });        
     });
 
@@ -73,7 +97,7 @@ function clearGrid(gridSquares) {
         opacityChoice = 1;
         colorChoice = "1, 1, 1, ";
         colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
-        changeColor();
+
     });
 }
 
