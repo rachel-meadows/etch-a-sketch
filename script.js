@@ -40,7 +40,7 @@ function changeColor() {
     colorChoiceOption.forEach((option) => {
         // This handler will be executed every time the user clicks a different radio button
         option.addEventListener("click", function( e ) {
-            opacityChoice = 1;
+
             colorChoice = option.value;
             colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
         });        
