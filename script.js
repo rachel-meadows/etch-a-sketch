@@ -24,17 +24,6 @@ function makeGrid (width, height) {
     return [gridRows, gridSquares];
 }
 
-
-/*
-  let currentlyDrawing = true;
-        gridSquare.addEventListener("click", function() {
-            if (currentlyDrawing = true) {
-                currentlyDrawing = false;
-                
-            } else {
-                currentlyDrawing = true;
-*/
-
 function applyHoverPen(gridSquares) {
     console.log("CurrentlyDrawing state is: " + currentlyDrawing);
     gridSquares.forEach((gridSquare) => {
@@ -76,6 +65,7 @@ function changeColor() {
             // Hex to RGB
             colorChoice = hexToRGB(customColor.value);
             colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
+            document.getElementById("custom").value = colorChoice;
      });
 
     colorChoiceOption.forEach((option) => {
@@ -102,7 +92,6 @@ function changeColor() {
 function clearGrid(gridSquares) {
     const clearGrid = document.querySelector('#clearGrid');
     clearGrid.addEventListener("click", function( e ) {
-
         backgroundColor = `rgba(242, 252, 253, 1)`;
         gridSquares.forEach((gridSquare) => {
             gridSquare.style.backgroundColor = backgroundColor;
