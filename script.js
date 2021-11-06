@@ -7,8 +7,6 @@ let opacityChoice = 1;
 let colorChoice = "1, 1, 1, ";
 let colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
 
-console.log("Is it checked?" + document.getElementById("black").checked);
-
 function makeGrid (width, height) {
     for (i = 0; i < height; i++){
         let row = document.createElement('div'); // Make new element div
@@ -30,10 +28,11 @@ function applyHoverPen(gridSquares) {
         let cellCount = 0;
         // This handler will be executed every time the cursor is moved over a different list item
         gridSquare.addEventListener("mouseover", function( e ) {
+
             // Highlight the mouseover grid square
-            cellCount += 0.1;
-            e.target.style.backgroundColor = colorOpacityChoice;
+            cellCount += 0.2;
             colorOpacityChoice = `rgba(${colorChoice + (opacityChoice + cellCount)})`;
+            e.target.style.backgroundColor = colorOpacityChoice;
         });
     });
 }
@@ -53,20 +52,14 @@ function changeColor() {
             
             // Hex to RGB
             colorChoice = hexToRGB(customColor.value);
-            console.log("colorChoice: " + colorChoice);
-
             colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
-            console.log("colorOpacityChoice: " + colorOpacityChoice);
      });
 
     colorChoiceOption.forEach((option) => {
         // This handler will be executed every time the user clicks a different radio button (other than a custom color)
         option.addEventListener("click", function( e ) {
             colorChoice = option.value;
-            console.log("colorChoice: " + colorChoice);
-            
             colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
-            console.log("colorOpacityChoice: " + colorOpacityChoice);
         });        
     });
 

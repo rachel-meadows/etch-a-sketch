@@ -41,7 +41,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
     border-radius: 5px;
 }
 
@@ -97,6 +97,7 @@ button:hover {
 
 .slidecontainer {
     width: 100%;
+    margin-top: 10px;;
   }
   
 .slider {
@@ -143,8 +144,6 @@ button:hover {
 .optionLabel {
     font-weight: 700;
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 0px;
   }
 
 form {
@@ -170,7 +169,6 @@ input[type="radio"]:checked + label {
 
 #gridSize {
     font-size: 15px;
-    margin-bottom: 10px;
 }
 
 #colorPickerContainer {
@@ -181,4 +179,11 @@ input[type="radio"]:checked + label {
 
 #colorPicker {
     max-width: 35px;
+}
+
+#sizeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
