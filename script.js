@@ -6,6 +6,7 @@ let gridSize = 16;
 let opacityChoice = 1;
 let colorChoice = "1, 1, 1, ";
 let colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
+let currentlyDrawing = true;
 
 function makeGrid (width, height) {
     for (i = 0; i < height; i++){
@@ -23,17 +24,39 @@ function makeGrid (width, height) {
     return [gridRows, gridSquares];
 }
 
+
+/*
+  let currentlyDrawing = true;
+        gridSquare.addEventListener("click", function() {
+            if (currentlyDrawing = true) {
+                currentlyDrawing = false;
+                
+            } else {
+                currentlyDrawing = true;
+*/
+
 function applyHoverPen(gridSquares) {
+    console.log("CurrentlyDrawing state is: " + currentlyDrawing);
     gridSquares.forEach((gridSquare) => {
         let cellCount = 0;
         // This handler will be executed every time the cursor is moved over a different list item
         gridSquare.addEventListener("mouseover", function( e ) {
-
-            // Highlight the mouseover grid square
-            cellCount += 0.2;
-            colorOpacityChoice = `rgba(${colorChoice + (opacityChoice + cellCount)})`;
-            e.target.style.backgroundColor = colorOpacityChoice;
+            if (currentlyDrawing == true) {
+                // Highlight the mouseover grid square
+                cellCount += 0.2;
+                colorOpacityChoice = `rgba(${colorChoice + (opacityChoice + cellCount)})`;
+                e.target.style.backgroundColor = colorOpacityChoice;
+            }
         });
+
+    });
+
+    document.getElementById("container").addEventListener("click", function() {
+        if (currentlyDrawing == true) {
+            currentlyDrawing = false;
+        } else {
+            currentlyDrawing = true;
+        }
     });
 }
 
