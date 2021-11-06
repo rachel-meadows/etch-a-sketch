@@ -54,7 +54,7 @@ function changeColor() {
             // Hex to RGB
             colorChoice = hexToRGB(customColor.value);
             console.log("colorChoice: " + colorChoice);
-            
+
             colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
             console.log("colorOpacityChoice: " + colorOpacityChoice);
      });
@@ -117,8 +117,7 @@ function resizeGrid() {
 }
 
 function enterActiveState (gridSize=16) {
-    gridArray = makeGrid(gridSize, gridSize); // Width, height - so needn't be square if wanted later
-    let gridRows = gridArray[0];
+    gridArray = makeGrid(gridSize, gridSize); // Width, height - so needn't be square if a rectangle is wanted
     let gridSquares = gridArray[1];
     applyHoverPen(gridSquares);
     clearGrid(gridSquares);
