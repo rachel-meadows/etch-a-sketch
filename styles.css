@@ -53,7 +53,7 @@ hr {
 }
 
 #container {
-    border: rgb(0, 204, 255) 1px solid;
+    border: black 2px solid;
     box-shadow: 0px 0px 1px rgb(0, 204, 255);
     display: flex;
     flex-direction: column;
@@ -100,24 +100,24 @@ button:hover {
   }
   
 .slider {
--webkit-appearance: none;
-appearance: none;
-width: 100%;
-height: 25px;
-background: #d3d3d3;
-outline: none;
-opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
--webkit-transition: .2s; /* 0.2 seconds transition on hover */
-transition: opacity .2s;
-height: 15px;
-border-radius: 5px; 
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    height: 15px;
+    border-radius: 5px; 
 }
   
-  .slider:hover {
+.slider:hover {
     opacity: 1;
-  }
-  
-  .slider::-webkit-slider-thumb {
+}
+
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
@@ -125,20 +125,20 @@ border-radius: 5px;
     border-radius: 50%; 
     background: rgba(0, 97, 223, 1);
     cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
+}
+
+.slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background: rgba(0, 97, 223, 1);
     cursor: pointer;
-  }
+}
 
-  #colorBlock {
-      display: flex;
-      flex-direction: column;
-  }
+#colorBlock {
+    display: flex;
+    flex-direction: column;
+}
 
 .optionLabel {
     font-weight: 700;

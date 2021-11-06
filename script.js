@@ -62,10 +62,18 @@ function changeColor() {
 function clearGrid(gridSquares) {
     const clearGrid = document.querySelector('#clearGrid');
     clearGrid.addEventListener("click", function( e ) {
-        colorOpacityChoice = `rgba(242, 252, 253, 1)`;
+
+        backgroundColor = `rgba(242, 252, 253, 1)`;
         gridSquares.forEach((gridSquare) => {
-            gridSquare.style.backgroundColor = colorOpacityChoice;
+            gridSquare.style.backgroundColor = backgroundColor;
         });
+
+        document.getElementById("black").checked = true;
+        document.getElementById("solid").checked = true;
+        opacityChoice = 1;
+        colorChoice = "1, 1, 1, ";
+        colorOpacityChoice = `rgba(${colorChoice + opacityChoice})`;
+        changeColor();
     });
 }
 
