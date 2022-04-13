@@ -197,3 +197,12 @@ input[type="radio"]:checked + label {
     max-width: 210px;
     font-size: 14px;
 }
+
+@media (max-width: 800px) {
+  #pageContainer {
+    flex-direction: column;
+  }
+  #sidebar {
+    order: 2;
+  }
+}
