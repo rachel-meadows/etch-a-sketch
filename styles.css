@@ -18,7 +18,9 @@ h1 {
     padding: 10px 0px;
     background-image: linear-gradient(rgb(0, 204, 255), rgba(0, 204, 255, 0.5));
     color: white;
-    text-shadow: 1px 2px 2px black;
+    text-shadow: 1px 3px 2px black, -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 h2 {
@@ -201,8 +203,41 @@ input[type="radio"]:checked + label {
 @media (max-width: 800px) {
   #pageContainer {
     flex-direction: column;
+    align-items: center;
   }
+
   #sidebar {
+    order: 1;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  #container {
     order: 2;
+    height: 90vw;
+    width: 90vw;
+  }
+
+  #clearGrid {
+    position: absolute;
+    bottom: 60px;
+  }
+
+  #tip {
+    display: none;
+  }
+
+  #colorBlock {
+    order: 1;
+  }
+
+  #opacityBlock {
+    order: 2;
+  }
+
+  #sizeBlock {
+    order: 3;
   }
 }
