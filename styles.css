@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     justify-content: stretch;
     gap: 5px;
+    background-color: purple;
 }
 
 h1 {
@@ -38,7 +39,7 @@ h2 {
     min-width: 20vw;
     border: 1px rgb(0, 204, 255) solid;
     box-shadow: 0px 0px 1px rgb(0, 204, 255);
-    background-color: rgba(0, 204, 255, 0.5);
+    background-color: rgba(0, 204, 255, 0.7);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -63,6 +64,7 @@ hr {
     align-items: center;
     height: 80vh;
     width: 80vh;
+    background-color: white;
 }
 
 .gridRow {
@@ -81,7 +83,7 @@ hr {
 
 #clearGrid {
     padding: 5px 30px;
-    background-color: rgba(0, 97, 223, 0.9);
+    background-color: rgb(0, 90, 206);
     border: none;
     border-radius: 5px;
     color: white;
@@ -95,7 +97,7 @@ button {
 
 button:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 1px 1px rgba(0, 97, 223, 1);
+    box-shadow: 0px 0px 1px 1px rgb(0, 85, 197)
 }
 
 .slidecontainer {
@@ -110,8 +112,8 @@ button:hover {
     height: 25px;
     background: #d3d3d3;
     outline: none;
-    opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    opacity: 0.8;
+    -webkit-transition: .2s;
     transition: opacity .2s;
     height: 15px;
     border-radius: 5px; 
@@ -127,7 +129,7 @@ button:hover {
     width: 25px;
     height: 25px;
     border-radius: 50%; 
-    background: rgba(0, 97, 223, 1);
+    background: rgb(0, 90, 206);
     cursor: pointer;
 }
 
@@ -135,7 +137,7 @@ button:hover {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: rgba(0, 97, 223, 1);
+    background: rgb(0, 90, 206);
     cursor: pointer;
 }
 
@@ -156,8 +158,8 @@ form {
 }
 
 input[type=radio] {
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
     transform: scale(1.5);
     margin-right: 5px;
 }
